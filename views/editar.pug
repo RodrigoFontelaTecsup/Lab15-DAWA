@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Editar Alumno
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css")
+  body(class="bg-gray-100 font-sans p-4")
+    div(class="container mx-auto")
+      h1(class="text-4xl font-bold mb-4") Editar Alumno
+      form(action=`/editar/${alumno.id}` method="POST")
+        label(for="nuevoNombre" class="block text-gray-700 text-sm font-bold mb-2") Nuevo Nombre del Alumno:
+        input(type="text" name="nuevoNombre" value=alumno.nombre required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        
+        label(for="nuevaMateria" class="block text-gray-700 text-sm font-bold mt-4 mb-2") Nueva Materia:
+        input(type="text" name="nuevaMateria" value=alumno.materia class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+
+        label(for="nuevaNota" class="block text-gray-700 text-sm font-bold mt-4 mb-2") Nueva Nota:
+        input(type="text" name="nuevaNota" value=alumno.nota class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+
+        button(type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded mt-4") Guardar Cambios
+      a(href=`/alumno/${alumno.id}` class="block text-blue-500 hover:underline mt-2") Volver a los Detalles
+      a(href="/" class="block text-blue-500 hover:underline mt-2") Volver a la Lista

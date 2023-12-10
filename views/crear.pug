@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Crear Nuevo Alumno
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css")
+  body(class="bg-gray-100 font-sans p-4")
+    div(class="container mx-auto")
+      h1(class="text-4xl font-bold mb-4") Crear Nuevo Alumno
+      form(action="/crear" method="POST")
+        label(for="nuevoDato" class="block text-gray-700 text-sm font-bold mb-2") Nombre del Alumno:
+        input(type="text" name="nuevoDato" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        
+        label(for="nota" class="block text-gray-700 text-sm font-bold mb-2") Nota:
+        input(type="number" name="nota" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+
+        label(for="materia" class="block text-gray-700 text-sm font-bold mb-2") Materia:
+        input(type="text" name="materia" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+
+        button(type="submit" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded mt-4") Crear Alumno
+      a(href="/" class="block text-blue-500 hover:underline mt-4") Volver a la Lista
